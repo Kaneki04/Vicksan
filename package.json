@@ -4,12 +4,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev": "next dev",
+    "export": "next export"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
