@@ -22,8 +22,8 @@ export default function Home() {
 
       <Header title="Apps" subtitle="アプリ" />
       <div className="flex justify-evenly w-full">
-        <Card title="Vicksan" image="/images/vicksan.png" href="/apps/0" />
-        <Card title="Kanjizy" image="/images/kanjizy.png" href="/apps/1" />
+        <Card title="Vicksan" image="/images/vicksan.png" href="/apps/vicksan" />
+        <Card title="Kanjizy" image="/images/kanjizy.png" href="/apps/kanjizy" />
       </div>
 
       {/* ------------------------------------------------ */}

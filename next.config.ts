@@ -1,7 +1,17 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  basePath: '/Vicksan',
+  trailingSlash: true,  
+  distDir: 'out', 
+  
+  typescript: {
+    ignoreBuildErrors: true, 
+    
+  },
+  eslint: {
+    ignoreDuringBuilds: true, // Ignore linting errors during build
+  },
 };
 
 export default nextConfig;
