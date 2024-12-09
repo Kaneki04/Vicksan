@@ -2,15 +2,19 @@ import React from "react";
 import { dictionary } from "@/data/blogs-info";
 import Header from "@/components/ui/header/header";
 
-interface Params {
-  blog: number;
+export function generateStaticParams() {
+  const blogIds = Object.keys(dictionary); // Assuming dictionary has blog IDs as keys
+
+  return blogIds.map((blogId) => ({
+    blog: blogId, 
+  }));
 }
 
-export default function BlogPost({ params }: { params: Params }) {
+export default function BlogPost({ params }: { params: { blog: number } }) {
   const blogData = dictionary[params.blog];
 
   return (
-    <div className=" text-gray-200 min-h-screen">
+    <div className="text-gray-200 min-h-screen">
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <article className="space-y-10">
           <Header title={blogData.name} subtitle={`Vicken | ${blogData.date}`} />
@@ -30,7 +34,6 @@ export default function BlogPost({ params }: { params: Params }) {
             </div>
 
             <div className="mt-6">
-              {/* This part is for rendering the whole content */}
               <p className="text-lg leading-relaxed">{blogData.infoWhole}</p>
             </div>
           </section>

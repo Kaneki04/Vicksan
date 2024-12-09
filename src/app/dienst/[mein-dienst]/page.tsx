@@ -1,12 +1,15 @@
-import React from "react";
 import { dictionary } from "@/data/dienst-data";
 import Header from "@/components/ui/header/header";
 
-interface Params {
-  "mein-dienst": number;
+export function generateStaticParams() {
+  const dienstIds = Object.keys(dictionary);
+
+  return dienstIds.map((dienstId) => ({
+    "mein-dienst": dienstId, 
+  }));
 }
 
-export default function Dienst({ params }: { params: Params }) {
+export default function Dienst({ params }: { params: { "mein-dienst": number } }) {
   const meinDienst = dictionary[params["mein-dienst"]];
 
   // Ensure skills exists and is an array before mapping
